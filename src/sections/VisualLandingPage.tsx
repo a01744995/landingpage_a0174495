@@ -24,7 +24,7 @@ export const VisualLandingPage: React.FC<VisualLandingPageProps> = ({
         {/* Background Render with subtle motion */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/visuals/hero-launch.jpg"
+            src="images/visuals/hero-launch.jpg"
             alt="WAFLE Rocket Tec Launch"
             className="w-full h-full object-cover object-center scale-[1.03] transition-transform duration-1000"
           />
@@ -121,7 +121,7 @@ export const VisualLandingPage: React.FC<VisualLandingPageProps> = ({
             <div className="lg:col-span-7 relative rounded-3xl overflow-hidden border border-[#E7B56A]/25 shadow-glow-soft bg-[#080706] group">
               <div className="pointer-events-none absolute inset-0 rounded-3xl border border-[#E7B56A]/20 animate-pulse-ring z-10" />
               <img
-                src="/images/visuals/rocket-blueprint-art.jpg"
+                src="images/visuals/rocket-blueprint-art.jpg"
                 alt="Estructura WAFLE Rocket Tec en PLA"
                 className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700"
               />
@@ -184,7 +184,7 @@ export const VisualLandingPage: React.FC<VisualLandingPageProps> = ({
 
             <div className="lg:col-span-7 order-1 lg:order-2 rounded-3xl overflow-hidden border border-[#E7B56A]/25 shadow-glow-soft bg-[#080706] group">
               <img
-                src="/images/visuals/parachute-recovery.jpg"
+                src="images/visuals/parachute-recovery.jpg"
                 alt="Recuperación por Paracaídas Octogonal WAFLE"
                 className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 animate-float-slow"
               />

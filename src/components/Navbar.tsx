@@ -38,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center gap-3 group text-left"
           >
             <img
-              src="/images/brand/emblem-main.jpg"
+              src="images/brand/emblem-main.jpg"
               alt="WAFLE Rocket Tec"
               className="w-10 h-10 rounded-full object-cover border border-[#E7B56A]/50 group-hover:scale-105 transition-transform duration-300"
             />

@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateView }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <img
-            src="/images/brand/emblem-main.jpg"
+            src="images/brand/emblem-main.jpg"
             alt="WAFLE Rocket Tec"
             className="w-9 h-9 rounded-full object-cover border border-[#E7B56A]/30"
           />

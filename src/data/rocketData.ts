@@ -362,7 +362,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Ingeniería Estructural & Manufactura Aditiva',
     specialty: 'Diseño CAD V10 & Polímeros PLA',
     badgeCode: 'WRT-01',
-    image: '/images/team/maria-paula-lopez.jpg',
+    image: 'images/team/maria-paula-lopez.jpg',
     contributions: [
       'Arquitectura estructural del fuselaje y separación de etapas en PLA (ρ ≈ 1.24 g/cm³).',
       'Control dimensional de las 6 piezas SolidWorks V10 y orientación vertical de impresión.',
@@ -376,7 +376,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Sistemas de Recuperación & Aerodinámica',
     specialty: 'Paracaídas Octogonal & Dinámica de Descenso',
     badgeCode: 'WRT-02',
-    image: '/images/team/ruth-rosales.jpg',
+    image: 'images/team/ruth-rosales.jpg',
     contributions: [
       'Diseño y manufactura del prototipo octogonal en Tafeta Stretch (D = 27.5 cm, S_0 = 534.7 cm²).',
       'Análisis de líneas de suspensión en Nylon Omega No. 2 y amortiguación por Shock Cord.',
@@ -390,7 +390,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Propulsión Sólida & Balística Exterior',
     specialty: 'Motor Estes A10-3T & Estabilidad de Vuelo',
     badgeCode: 'WRT-03',
-    image: '/images/team/pablo-dominguez.jpg',
+    image: 'images/team/pablo-dominguez.jpg',
     contributions: [
       'Integración del motor Estes A10-3T (2.5 Ns, empuje medio 5.7 N) y protección térmica Wadding.',
       'Cálculo de trayectoria de ascenso propulsado, inercia y apogeo estimado de 75 m en Culiacán.',
@@ -404,7 +404,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Instrumentación Electrónica & Carga Útil',
     specialty: 'Aviónica Barométrica & Protección al Impacto',
     badgeCode: 'WRT-04',
-    image: '/images/team/karen-alba.jpg',
+    image: 'images/team/karen-alba.jpg',
     contributions: [
       'Integración del altímetro barométrico (12.0 g) y calibración de puertos estáticos de presión.',
       'Diseño de cuna amortiguadora en Goma EVA (5 mm) para disipación de energía cinética (0.244 J).',
@@ -418,7 +418,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Modelado Físico-Matemático & Simulación',
     specialty: 'Telemetría Interactiva & Arquitectura Digital',
     badgeCode: 'WRT-05',
-    image: '/images/team/jovany-quintero.jpg',
+    image: 'images/team/jovany-quintero.jpg',
     contributions: [
       'Modelado matemático de equilibrio dinámico, velocidad terminal (v_t) y tensión de apertura.',
       'Desarrollo del simulador paramétrico de vuelo y plataforma de evaluación de ingeniería.',

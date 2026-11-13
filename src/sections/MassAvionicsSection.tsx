@@ -487,7 +487,7 @@ export const MassAvionicsSection: React.FC = () => {
                   </div>
 
                   <a
-                    href={`/cad/${encodeURIComponent(selectedPart.fileName)}`}
+                    href={`cad/${encodeURIComponent(selectedPart.fileName)}`}
                     download={selectedPart.fileName}
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-[#E7B56A] font-mono text-[11px] transition-colors"
                   >
