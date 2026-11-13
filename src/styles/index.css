@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-space: #0B0B0B;
+    --text-vanilla: #FFF3E0;
+    --text-gold: #F8D6A1;
+    --accent-caramel: #D8903D;
+    --accent-waffle: #E7B56A;
+    --accent-chocolate: #6B3A1E;
+  }
+
+  body {
+    background-color: #0B0B0B;
+    color: #FFF3E0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Custom Aerospace Blueprint & Waffle Grid Backgrounds */
+.bg-blueprint-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(231, 181, 106, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(231, 181, 106, 0.05) 1px, transparent 1px);
+}
+
+.bg-waffle-mesh {
+  background-size: 24px 24px;
+  background-image:
+    linear-gradient(45deg, rgba(216, 144, 61, 0.04) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(216, 144, 61, 0.04) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(216, 144, 61, 0.04) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(216, 144, 61, 0.04) 75%);
+}
+
+/* Custom Range Sliders for Telemetry Simulator */
+input[type="range"].telemetry-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(248, 214, 161, 0.14);
+  border-radius: 999px;
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+input[type="range"].telemetry-slider:hover {
+  background: rgba(248, 214, 161, 0.24);
+}
+
+input[type="range"].telemetry-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #E7B56A;
+  border: 2px solid #0B0B0B;
+  box-shadow: 0 0 12px rgba(216, 144, 61, 0.8);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"].telemetry-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #FFF3E0;
+}
+
+input[type="range"].telemetry-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #E7B56A;
+  border: 2px solid #0B0B0B;
+  box-shadow: 0 0 12px rgba(216, 144, 61, 0.8);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2C221B;
+  border-radius: 4px;
+  border: 1px solid rgba(231, 181, 106, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D8903D;
+}
+
+/* Smooth Aerospace Visual Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes emberRise {
+  0% {
+    transform: translateY(20px) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-ember {
+  animation: emberRise 4.5s ease-in infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 3.5s ease-in-out infinite;
+}
