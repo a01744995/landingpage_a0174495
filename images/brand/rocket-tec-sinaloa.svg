@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none" role="img" aria-label="Logotipo Oficial Rocket Tec Sinaloa">
+  <defs>
+    <linearGradient id="rtsGold" x1="25" y1="20" x2="215" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF3E0" />
+      <stop offset="38%" stop-color="#E7B56A" />
+      <stop offset="78%" stop-color="#D8903D" />
+      <stop offset="100%" stop-color="#9A5B1F" />
+    </linearGradient>
+    <linearGradient id="rtsBg" x1="120" y1="12" x2="120" y2="228" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#132942" />
+      <stop offset="65%" stop-color="#0B192B" />
+      <stop offset="100%" stop-color="#0B0B0B" />
+    </linearGradient>
+    <linearGradient id="rtsFlame" x1="120" y1="150" x2="120" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF3E0" />
+      <stop offset="45%" stop-color="#E7B56A" />
+      <stop offset="100%" stop-color="#D8903D" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Emblem Ring -->
+  <circle cx="120" cy="120" r="110" fill="url(#rtsBg)" stroke="url(#rtsGold)" stroke-width="5" />
+  <circle cx="120" cy="120" r="100" stroke="#E7B56A" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="5 4" />
+
+  <!-- Decorative Telemetry Stars -->
+  <path d="M52 72 L54.5 79.5 L62 82 L54.5 84.5 L52 92 L49.5 84.5 L42 82 L49.5 79.5 Z" fill="#F8D6A1" opacity="0.9" />
+  <path d="M188 70 L190 76 L196 78 L190 80 L188 86 L186 80 L180 78 L186 76 Z" fill="#E7B56A" opacity="0.85" />
+  <circle cx="62" cy="118" r="2.3" fill="#FFF3E0" opacity="0.7" />
+  <circle cx="179" cy="116" r="2.3" fill="#FFF3E0" opacity="0.7" />
+
+  <!-- Orbital Arcs flanking Rocket -->
+  <path d="M84 68 C62 88, 56 118, 70 144 C64 118, 70 93, 88 74 Z" fill="url(#rtsGold)" />
+  <path d="M156 68 C178 88, 184 118, 170 144 C176 118, 170 93, 152 74 Z" fill="url(#rtsGold)" />
+
+  <!-- Rocket Nose Cone -->
+  <path d="M120 34 C107 49, 100 61, 97 71 L120 63 L143 71 C140 61, 133 49, 120 34 Z" fill="url(#rtsGold)" stroke="#0B0B0B" stroke-width="1.5" />
+
+  <!-- Rocket Main Body (Split Aerospace Crest) -->
+  <path d="M120 68 C104 72, 95 83, 95 104 L95 144 L112 144 L112 122 C112 117, 116 113, 120 113 C124 113, 128 117, 128 122 L128 144 L145 144 L145 104 C145 83, 136 72, 120 68 Z" fill="url(#rtsGold)" stroke="#0B0B0B" stroke-width="1.5" />
+
+  <!-- Internal Crest Details -->
+  <rect x="103" y="84" width="10" height="24" rx="3" fill="#0F2236" opacity="0.75" />
+  <rect x="127" y="84" width="10" height="14" rx="3" fill="#0F2236" opacity="0.75" />
+  <rect x="127" y="102" width="10" height="10" rx="2" fill="#0F2236" opacity="0.65" />
+  <circle cx="120" cy="95" r="5" fill="#0F2236" stroke="#FFF3E0" stroke-width="1.3" />
+
+  <!-- Side Fins -->
+  <path d="M95 112 L75 129 L78 160 L95 145 Z" fill="url(#rtsGold)" stroke="#0B0B0B" stroke-width="1.4" />
+  <path d="M145 112 L165 129 L162 160 L145 145 Z" fill="url(#rtsGold)" stroke="#0B0B0B" stroke-width="1.4" />
+
+  <!-- Center Tail Stabilizer -->
+  <path d="M120 118 C115 127, 115 144, 120 155 C125 144, 125 127, 120 118 Z" fill="#FFF3E0" stroke="#0B0B0B" stroke-width="1.2" />
+
+  <!-- Propulsion Plume -->
+  <path d="M108 154 L132 154 L136 168 L120 189 L104 168 Z" fill="url(#rtsFlame)" />
+  <path d="M114 156 L126 156 L120 176 Z" fill="#FFF3E0" />
+
+  <!-- Bottom Banner -->
+  <rect x="34" y="182" width="172" height="32" rx="16" fill="#0B0B0B" stroke="url(#rtsGold)" stroke-width="2" />
+  <text x="120" y="197" text-anchor="middle" fill="#FFF3E0" font-family="Space Grotesk, Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="1.6">ROCKET TEC</text>
+  <text x="120" y="209" text-anchor="middle" fill="#E7B56A" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="2.8">SINALOA</text>
+</svg>
