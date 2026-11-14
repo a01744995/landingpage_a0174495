@@ -50,10 +50,55 @@ export interface TeamMember {
   contributions: string[];
 }
 
+export interface BrandColorSwatch {
+  name: string;
+  hex: string;
+  role: string;
+}
+
+export const BRAND_PALETTE: BrandColorSwatch[] = [
+  { name: 'Negro Espacial', hex: '#0B0B0B', role: 'Fondo principal • Contraste y elegancia' },
+  { name: 'Crema Vainilla', hex: '#FFF3E0', role: 'Color base • Limpieza y legibilidad' },
+  { name: 'Vainilla Dorada', hex: '#F8D6A1', role: 'Apoyo • Calidez y balance' },
+  { name: 'Caramelo', hex: '#D8903D', role: 'Acento principal • Energía e ignición' },
+  { name: 'Chocolate', hex: '#6B3A1E', role: 'Profundidad • Detalle y jerarquía' },
+  { name: 'Waffle', hex: '#E7B56A', role: 'Textura y complemento • Inspiración del waffle' },
+];
+
+export const BRAND_TYPOGRAPHY = [
+  {
+    name: 'Orbitron / Space Grotesk',
+    role: 'Titulares & Logotipo',
+    sample: 'WAFLE ROCKET TEC',
+    className: 'font-display tracking-wider',
+  },
+  {
+    name: 'Plus Jakarta Sans',
+    role: 'Lectura & Narrativa',
+    sample: 'Ingeniería Aeroespacial Experimental',
+    className: 'font-sans',
+  },
+  {
+    name: 'JetBrains Mono',
+    role: 'Telemetría & Códigos',
+    sample: 'UTC−7 • 02 DIC 2026 • 07:00 AM',
+    className: 'font-mono',
+  },
+];
+
 export const MISSION_CONSTANTS = {
   projectTitle: 'WAFLE Rocket Tec',
+  teamName: 'WAFLE Rocket Tec',
+  teamNumber: 'Equipo 05',
+  groupCode: 'Grupo 101',
+  programName: 'Rocket Tec Sinaloa',
   institution: 'Tecnológico de Monterrey',
   campus: 'Campus Culiacán',
+  launchDateIso: '2026-12-02T07:00:00-07:00',
+  launchWindowStartIso: '2026-11-01T00:00:00-07:00',
+  launchDateLabel: 'Miércoles 2 de diciembre de 2026 • 7:00 a. m.',
+  launchTimezoneLabel: 'Hora local de Culiacán, Sinaloa (UTC−7)',
+  githubPagesUrl: 'https://a01744995.github.io/landingpage_a0174495/',
   coordinates: '24.8049° N, 107.3940° W',
   altitudeMsnm: '54–55 m s. n. m.',
   ambientTempC: 30,
@@ -390,7 +435,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Propulsión Sólida & Balística Exterior',
     specialty: 'Motor Estes A10-3T & Estabilidad de Vuelo',
     badgeCode: 'WRT-03',
-    image: 'images/team/pablo-dominguez.jpg',
+    image: 'images/team/pablo-dominguez.png',
     contributions: [
       'Integración del motor Estes A10-3T (2.5 Ns, empuje medio 5.7 N) y protección térmica Wadding.',
       'Cálculo de trayectoria de ascenso propulsado, inercia y apogeo estimado de 75 m en Culiacán.',

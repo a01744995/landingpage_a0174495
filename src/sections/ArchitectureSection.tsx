@@ -219,7 +219,7 @@ export const ArchitectureSection: React.FC = () => {
                 </div>
 
                 <a
-                  href={`/cad/${encodeURIComponent(selectedPart.fileName)}`}
+                  href={`cad/${encodeURIComponent(selectedPart.fileName)}`}
                   download={selectedPart.fileName}
                   className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#E7B56A] hover:bg-[#FFF3E0] text-[#0B0B0B] font-mono text-xs font-bold transition-colors"
                 >

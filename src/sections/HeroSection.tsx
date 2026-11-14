@@ -70,9 +70,9 @@ export const HeroSection: React.FC = () => {
             <div className="relative w-full max-w-[340px] p-5 rounded-3xl bg-[#12100E] border border-white/10 shadow-glow-soft">
               <div className="rounded-2xl overflow-hidden aspect-square bg-[#0B0B0B] border border-[#E7B56A]/20">
                 <img
-                  src="/images/brand/emblem-main.jpg"
+                  src="images/brand/emblem-main.png"
                   alt="Emblema WAFLE Rocket Tec"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-2"
                 />
               </div>
               <div className="mt-4 flex items-center justify-between px-1 text-xs font-mono text-[#F8D6A1]/70">

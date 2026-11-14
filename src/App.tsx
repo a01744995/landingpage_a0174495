@@ -1,13 +1,49 @@
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Navbar } from './components/Navbar';
+import { BrandIdentityModal } from './components/BrandIdentityModal';
 import { VisualLandingPage } from './sections/VisualLandingPage';
+import { HeroSection } from './sections/HeroSection';
 import { MassAvionicsSection } from './sections/MassAvionicsSection';
 import { FlightSimulatorSection } from './sections/FlightSimulatorSection';
+import { PropulsionSection } from './sections/PropulsionSection';
+import { RecoveryPhysicsSection } from './sections/RecoveryPhysicsSection';
 import { Footer } from './components/Footer';
+import { MISSION_CONSTANTS } from './data/rocketData';
+
+const STORAGE_TEAM_NUM_KEY = 'wafle_team_number';
+const STORAGE_GROUP_CODE_KEY = 'wafle_group_code';
 
 export function App() {
   const [viewMode, setViewMode] = useState<'visual' | 'engineering'>('visual');
+  const [isBrandModalOpen, setIsBrandModalOpen] = useState(false);
+
+  const [teamNumber, setTeamNumber] = useState<string>(() => {
+    try {
+      return window.localStorage.getItem(STORAGE_TEAM_NUM_KEY) || MISSION_CONSTANTS.teamNumber;
+    } catch {
+      return MISSION_CONSTANTS.teamNumber;
+    }
+  });
+
+  const [groupCode, setGroupCode] = useState<string>(() => {
+    try {
+      return window.localStorage.getItem(STORAGE_GROUP_CODE_KEY) || MISSION_CONSTANTS.groupCode;
+    } catch {
+      return MISSION_CONSTANTS.groupCode;
+    }
+  });
+
+  const handleUpdateTeamMeta = (nextTeamNumber: string, nextGroupCode: string) => {
+    setTeamNumber(nextTeamNumber);
+    setGroupCode(nextGroupCode);
+    try {
+      window.localStorage.setItem(STORAGE_TEAM_NUM_KEY, nextTeamNumber);
+      window.localStorage.setItem(STORAGE_GROUP_CODE_KEY, nextGroupCode);
+    } catch {
+      // ignore storage errors
+    }
+  };
 
   const handleEnterEngineering = (targetSection?: string) => {
     setViewMode('engineering');
@@ -40,17 +76,24 @@ export function App() {
       <Navbar
         viewMode={viewMode}
         onToggleViewMode={setViewMode}
+        onOpenBrandModal={() => setIsBrandModalOpen(true)}
+        teamNumber={teamNumber}
+        groupCode={groupCode}
       />
 
       <main className="flex-1">
         {viewMode === 'visual' ? (
           <VisualLandingPage
             onEnterEngineering={handleEnterEngineering}
+            onOpenBrandModal={() => setIsBrandModalOpen(true)}
+            teamNumber={teamNumber}
+            groupCode={groupCode}
+            onUpdateTeamMeta={handleUpdateTeamMeta}
           />
         ) : (
-          <div className="pt-24">
-            {/* Top Banner in Engineering Mode to return to Visual Landing */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2 flex items-center justify-between">
+          <div className="pt-20 animate-fadeIn">
+            {/* Top Banner in Separated Engineering & Data Mode */}
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2 flex flex-wrap items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={() => {
@@ -60,20 +103,32 @@ export function App() {
                 className="inline-flex items-center gap-2 text-xs font-mono text-[#E7B56A] hover:text-[#FFF3E0] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span>Volver a Portada Visual</span>
+                <span>Volver a Landing Page</span>
               </button>
-              <span className="text-xs font-mono text-[#F8D6A1]/60">
-                MODO EVALUACIÓN • TEC DE MONTERREY
+              <span className="text-xs font-mono text-[#F8D6A1]/65">
+                DATOS TÉCNICOS (APARTE) • {teamNumber} • {groupCode}
               </span>
             </div>
 
+            <HeroSection />
             <FlightSimulatorSection />
             <MassAvionicsSection />
+            <PropulsionSection />
+            <RecoveryPhysicsSection />
           </div>
         )}
       </main>
 
-      <Footer onNavigateView={handleFooterNavigate} />
+      <Footer
+        onNavigateView={handleFooterNavigate}
+        teamNumber={teamNumber}
+        groupCode={groupCode}
+      />
+
+      <BrandIdentityModal
+        isOpen={isBrandModalOpen}
+        onClose={() => setIsBrandModalOpen(false)}
+      />
     </div>
   );
 }
