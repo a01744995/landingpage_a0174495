@@ -89,8 +89,8 @@ export const BRAND_TYPOGRAPHY = [
 export const MISSION_CONSTANTS = {
   projectTitle: 'WAFLE Rocket Tec',
   teamName: 'WAFLE Rocket Tec',
-  teamNumber: 'Equipo 05',
-  groupCode: 'Grupo 101',
+  teamNumber: 'Equipo 04',
+  groupCode: 'Grupo 502',
   programName: 'Rocket Tec Sinaloa',
   institution: 'Tecnológico de Monterrey',
   campus: 'Campus Culiacán',

@@ -11,8 +11,8 @@ import { RecoveryPhysicsSection } from './sections/RecoveryPhysicsSection';
 import { Footer } from './components/Footer';
 import { MISSION_CONSTANTS } from './data/rocketData';
 
-const STORAGE_TEAM_NUM_KEY = 'wafle_team_number';
-const STORAGE_GROUP_CODE_KEY = 'wafle_group_code';
+const STORAGE_TEAM_NUM_KEY = 'wafle_team_number_v2';
+const STORAGE_GROUP_CODE_KEY = 'wafle_group_code_v2';
 
 export function App() {
   const [viewMode, setViewMode] = useState<'visual' | 'engineering'>('visual');

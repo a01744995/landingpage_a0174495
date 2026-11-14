@@ -205,7 +205,7 @@ export const VisualLandingPage: React.FC<VisualLandingPageProps> = ({
                       type="text"
                       value={draftTeam}
                       onChange={(e) => setDraftTeam(e.target.value)}
-                      placeholder="Ej. Equipo 05"
+                      placeholder="Ej. Equipo 04"
                       aria-label="Número de equipo"
                       className="px-3 py-2 rounded-xl bg-[#0B0B0B] border border-[#E7B56A]/40 text-xs font-mono text-[#FFF3E0] focus:outline-none focus:border-[#D8903D]"
                     />
@@ -213,7 +213,7 @@ export const VisualLandingPage: React.FC<VisualLandingPageProps> = ({
                       type="text"
                       value={draftGroup}
                       onChange={(e) => setDraftGroup(e.target.value)}
-                      placeholder="Ej. Grupo 101"
+                      placeholder="Ej. Grupo 502"
                       aria-label="Grupo"
                       className="px-3 py-2 rounded-xl bg-[#0B0B0B] border border-[#E7B56A]/40 text-xs font-mono text-[#FFF3E0] focus:outline-none focus:border-[#D8903D]"
                     />
