@@ -70,12 +70,34 @@ export const LaunchCountdown: React.FC = () => {
   );
 
   return (
-    <div className="relative rounded-[2rem] bg-gradient-to-br from-[#16120E] via-[#0F0C09] to-[#1A130C] border border-[#E7B56A]/35 p-6 sm:p-10 shadow-glow-soft overflow-hidden bg-waffle-mesh">
+    <div className="relative rounded-[2rem] bg-gradient-to-br from-[#16120E] via-[#0F0C09] to-[#1A130C] border border-[#E7B56A]/40 p-6 sm:p-10 waffle-toast-glow overflow-hidden bg-waffle-animated">
+      {/* Melted Caramel & Chocolate Syrup Drip Top Border */}
+      <svg
+        viewBox="0 0 1200 44"
+        preserveAspectRatio="none"
+        className="pointer-events-none absolute top-0 left-0 w-full h-7 sm:h-9 opacity-85"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="countdownSyrup" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#6B3A1E" />
+            <stop offset="45%" stopColor="#D8903D" />
+            <stop offset="75%" stopColor="#E7B56A" />
+            <stop offset="100%" stopColor="#6B3A1E" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0,0 L1200,0 L1200,12 C1150,12 1135,34 1110,34 C1085,34 1075,14 1040,14 C1000,14 985,26 960,26 C935,26 920,10 860,10 C800,10 785,38 755,38 C725,38 710,13 655,13 C600,13 585,28 555,28 C525,28 505,11 450,11 C390,11 375,35 345,35 C315,35 300,12 245,12 C190,12 175,27 145,27 C115,27 95,12 45,12 C20,12 8,18 0,18 Z"
+          fill="url(#countdownSyrup)"
+          className="animate-syrup-drip"
+        />
+      </svg>
+
       {/* Decorative Orbital Rings */}
       <div className="pointer-events-none absolute -top-28 -right-28 w-72 h-72 rounded-full border border-[#D8903D]/15 animate-orbit-slow" />
       <div className="pointer-events-none absolute -bottom-32 -left-24 w-80 h-80 rounded-full border border-dashed border-[#E7B56A]/15 animate-orbit-reverse" />
 
-      <div className="relative z-10 space-y-8">
+      <div className="relative z-10 space-y-8 pt-2">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#E7B56A]/20 pb-6">
           <div className="space-y-2">
@@ -89,7 +111,7 @@ export const LaunchCountdown: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:items-end gap-1.5 text-xs font-mono">
-            <div className="inline-flex items-center gap-2 text-[#FFF3E0] bg-[#0B0B0B]/80 px-3.5 py-2 rounded-xl border border-[#E7B56A]/25">
+            <div className="inline-flex items-center gap-2 text-[#FFF3E0] bg-[#0B0B0B]/85 px-3.5 py-2 rounded-xl border border-[#E7B56A]/25">
               <CalendarClock className="w-4 h-4 text-[#D8903D] shrink-0" />
               <span>{MISSION_CONSTANTS.launchDateLabel}</span>
             </div>
@@ -116,13 +138,14 @@ export const LaunchCountdown: React.FC = () => {
             {blocks.map((block) => (
               <div
                 key={block.label}
-                className={`relative rounded-2xl sm:rounded-3xl bg-[#0B0B0B]/90 border p-4 sm:p-6 text-center transition-transform duration-300 hover:-translate-y-1 ${
+                className={`relative rounded-2xl sm:rounded-3xl bg-[#0B0B0B]/90 bg-waffle-mesh border p-4 sm:p-6 text-center transition-transform duration-300 hover:-translate-y-1.5 ${
                   block.highlight
                     ? 'border-[#D8903D]/70 animate-countdown-pulse'
-                    : 'border-[#E7B56A]/25 hover:border-[#E7B56A]/60'
+                    : 'border-[#E7B56A]/25 hover:border-[#E7B56A]/65'
                 }`}
               >
-                <div className="absolute top-2.5 right-3 w-1.5 h-1.5 rounded-full bg-[#D8903D]/60" />
+                {/* Mini golden waffle square corner accent */}
+                <span className="absolute top-3 right-3 w-2 h-2 rotate-45 bg-[#D8903D]/70 rounded-[1px]" />
                 <div
                   key={block.highlight ? block.value : undefined}
                   className={`font-orbitron text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight tabular-nums ${

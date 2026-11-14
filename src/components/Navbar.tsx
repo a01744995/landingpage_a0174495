@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Gauge, Eye, Palette } from 'lucide-react';
+import { Gauge, Eye } from 'lucide-react';
 
 interface NavbarProps {
   viewMode: 'visual' | 'engineering';
   onToggleViewMode: (mode: 'visual' | 'engineering') => void;
-  onOpenBrandModal: () => void;
   teamNumber: string;
   groupCode: string;
 }
@@ -12,7 +11,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   viewMode,
   onToggleViewMode,
-  onOpenBrandModal,
   teamNumber,
   groupCode,
 }) => {
@@ -71,53 +69,41 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </button>
 
-          {/* Right Controls: Brand Kit + Separated Mode Switcher */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* Right Mode Switcher */}
+          <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-black/75 backdrop-blur-md border border-[#E7B56A]/25 shrink-0">
             <button
               type="button"
-              onClick={onOpenBrandModal}
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono text-[#F8D6A1]/85 hover:text-[#FFF3E0] bg-white/[0.04] hover:bg-white/[0.1] border border-[#E7B56A]/25 transition-all"
-              title="Ver Guía Oficial de Identidad Visual"
+              onClick={() => {
+                onToggleViewMode('visual');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
+                viewMode === 'visual'
+                  ? 'bg-gradient-to-r from-[#E7B56A] to-[#D8903D] text-[#0B0B0B] font-bold shadow-glow-amber'
+                  : 'text-[#F8D6A1]/80 hover:text-[#FFF3E0]'
+              }`}
             >
-              <Palette className="w-3.5 h-3.5 text-[#D8903D]" />
-              <span>Identidad</span>
+              <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <span className="hidden sm:inline">Landing Page</span>
+              <span className="sm:hidden">Inicio</span>
             </button>
 
-            <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-black/75 backdrop-blur-md border border-[#E7B56A]/25">
-              <button
-                type="button"
-                onClick={() => {
-                  onToggleViewMode('visual');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
-                  viewMode === 'visual'
-                    ? 'bg-gradient-to-r from-[#E7B56A] to-[#D8903D] text-[#0B0B0B] font-bold shadow-glow-amber'
-                    : 'text-[#F8D6A1]/80 hover:text-[#FFF3E0]'
-                }`}
-              >
-                <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="hidden sm:inline">Landing Page</span>
-                <span className="sm:hidden">Inicio</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  onToggleViewMode('engineering');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
-                  viewMode === 'engineering'
-                    ? 'bg-gradient-to-r from-[#E7B56A] to-[#D8903D] text-[#0B0B0B] font-bold shadow-glow-amber'
-                    : 'text-[#F8D6A1]/80 hover:text-[#FFF3E0]'
-                }`}
-              >
-                <Gauge className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="hidden sm:inline">Datos &amp; Simulador</span>
-                <span className="sm:hidden">Datos</span>
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={() => {
+                onToggleViewMode('engineering');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
+                viewMode === 'engineering'
+                  ? 'bg-gradient-to-r from-[#E7B56A] to-[#D8903D] text-[#0B0B0B] font-bold shadow-glow-amber'
+                  : 'text-[#F8D6A1]/80 hover:text-[#FFF3E0]'
+              }`}
+            >
+              <Gauge className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <span className="hidden sm:inline">Ingeniería &amp; Simulador</span>
+              <span className="sm:hidden">Simulador</span>
+            </button>
           </div>
         </div>
       </div>

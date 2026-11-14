@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Navbar } from './components/Navbar';
-import { BrandIdentityModal } from './components/BrandIdentityModal';
 import { VisualLandingPage } from './sections/VisualLandingPage';
 import { HeroSection } from './sections/HeroSection';
 import { MassAvionicsSection } from './sections/MassAvionicsSection';
@@ -11,39 +10,8 @@ import { RecoveryPhysicsSection } from './sections/RecoveryPhysicsSection';
 import { Footer } from './components/Footer';
 import { MISSION_CONSTANTS } from './data/rocketData';
 
-const STORAGE_TEAM_NUM_KEY = 'wafle_team_number_v2';
-const STORAGE_GROUP_CODE_KEY = 'wafle_group_code_v2';
-
 export function App() {
   const [viewMode, setViewMode] = useState<'visual' | 'engineering'>('visual');
-  const [isBrandModalOpen, setIsBrandModalOpen] = useState(false);
-
-  const [teamNumber, setTeamNumber] = useState<string>(() => {
-    try {
-      return window.localStorage.getItem(STORAGE_TEAM_NUM_KEY) || MISSION_CONSTANTS.teamNumber;
-    } catch {
-      return MISSION_CONSTANTS.teamNumber;
-    }
-  });
-
-  const [groupCode, setGroupCode] = useState<string>(() => {
-    try {
-      return window.localStorage.getItem(STORAGE_GROUP_CODE_KEY) || MISSION_CONSTANTS.groupCode;
-    } catch {
-      return MISSION_CONSTANTS.groupCode;
-    }
-  });
-
-  const handleUpdateTeamMeta = (nextTeamNumber: string, nextGroupCode: string) => {
-    setTeamNumber(nextTeamNumber);
-    setGroupCode(nextGroupCode);
-    try {
-      window.localStorage.setItem(STORAGE_TEAM_NUM_KEY, nextTeamNumber);
-      window.localStorage.setItem(STORAGE_GROUP_CODE_KEY, nextGroupCode);
-    } catch {
-      // ignore storage errors
-    }
-  };
 
   const handleEnterEngineering = (targetSection?: string) => {
     setViewMode('engineering');
@@ -76,23 +44,20 @@ export function App() {
       <Navbar
         viewMode={viewMode}
         onToggleViewMode={setViewMode}
-        onOpenBrandModal={() => setIsBrandModalOpen(true)}
-        teamNumber={teamNumber}
-        groupCode={groupCode}
+        teamNumber={MISSION_CONSTANTS.teamNumber}
+        groupCode={MISSION_CONSTANTS.groupCode}
       />
 
       <main className="flex-1">
         {viewMode === 'visual' ? (
           <VisualLandingPage
             onEnterEngineering={handleEnterEngineering}
-            onOpenBrandModal={() => setIsBrandModalOpen(true)}
-            teamNumber={teamNumber}
-            groupCode={groupCode}
-            onUpdateTeamMeta={handleUpdateTeamMeta}
+            teamNumber={MISSION_CONSTANTS.teamNumber}
+            groupCode={MISSION_CONSTANTS.groupCode}
           />
         ) : (
           <div className="pt-20 animate-fadeIn">
-            {/* Top Banner in Separated Engineering & Data Mode */}
+            {/* Top Banner in Engineering & Simulator Mode */}
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2 flex flex-wrap items-center justify-between gap-3">
               <button
                 type="button"
@@ -106,7 +71,7 @@ export function App() {
                 <span>Volver a Landing Page</span>
               </button>
               <span className="text-xs font-mono text-[#F8D6A1]/65">
-                DATOS TÉCNICOS (APARTE) • {teamNumber} • {groupCode}
+                INGENIERÍA &amp; SIMULADOR • {MISSION_CONSTANTS.teamNumber} • {MISSION_CONSTANTS.groupCode}
               </span>
             </div>
 
@@ -121,13 +86,8 @@ export function App() {
 
       <Footer
         onNavigateView={handleFooterNavigate}
-        teamNumber={teamNumber}
-        groupCode={groupCode}
-      />
-
-      <BrandIdentityModal
-        isOpen={isBrandModalOpen}
-        onClose={() => setIsBrandModalOpen(false)}
+        teamNumber={MISSION_CONSTANTS.teamNumber}
+        groupCode={MISSION_CONSTANTS.groupCode}
       />
     </div>
   );

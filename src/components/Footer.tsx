@@ -57,14 +57,14 @@ export const Footer: React.FC<FooterProps> = ({
                 onClick={() => onNavigateView('engineering', 'simulador')}
                 className="hover:text-[#FFF3E0] transition-colors"
               >
-                Datos &amp; Simulador
+                Simulador
               </button>
               <button
                 type="button"
                 onClick={() => onNavigateView('engineering', 'ingenieria')}
                 className="hover:text-[#FFF3E0] transition-colors"
               >
-                Subsistemas (Aparte)
+                Subsistemas
               </button>
             </>
           ) : (

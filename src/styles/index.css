@@ -44,6 +44,16 @@
     linear-gradient(-45deg, transparent 75%, rgba(216, 144, 61, 0.05) 75%);
 }
 
+.bg-waffle-animated {
+  background-size: 28px 28px;
+  background-image:
+    linear-gradient(45deg, rgba(231, 181, 106, 0.08) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(216, 144, 61, 0.08) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(107, 58, 30, 0.14) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(231, 181, 106, 0.07) 75%);
+  animation: waffleGridShift 18s linear infinite;
+}
+
 /* Custom Range Sliders for Telemetry Simulator */
 input[type="range"].telemetry-slider {
   -webkit-appearance: none;
@@ -109,7 +119,7 @@ input[type="range"].telemetry-slider::-moz-range-thumb {
   background: #D8903D;
 }
 
-/* Smooth Aerospace Visual Animations */
+/* Smooth Aerospace & Waffle-Themed Animations */
 @keyframes floatSlow {
   0%, 100% {
     transform: translateY(0px);
@@ -121,10 +131,66 @@ input[type="range"].telemetry-slider::-moz-range-thumb {
 
 @keyframes rocketHover {
   0%, 100% {
-    transform: translateY(0px) rotate(-1deg);
+    transform: translateY(0px) rotate(-1.2deg);
   }
   50% {
-    transform: translateY(-12px) rotate(1deg);
+    transform: translateY(-12px) rotate(1.2deg);
+  }
+}
+
+@keyframes waffleGridShift {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 56px 56px, -56px 56px, 56px -56px, -56px -56px;
+  }
+}
+
+@keyframes waffleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(-6deg) scale(1);
+  }
+  33% {
+    transform: translateY(-14px) rotate(5deg) scale(1.04);
+  }
+  66% {
+    transform: translateY(-6px) rotate(-2deg) scale(0.98);
+  }
+}
+
+@keyframes syrupDrip {
+  0%, 100% {
+    transform: scaleY(1) translateY(0px);
+  }
+  50% {
+    transform: scaleY(1.18) translateY(3px);
+  }
+}
+
+@keyframes caramelDrop {
+  0% {
+    transform: translateY(-6px) scale(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.95;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(28px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes waffleToastGlow {
+  0%, 100% {
+    box-shadow: 0 0 22px -6px rgba(216, 144, 61, 0.25), inset 0 0 18px -10px rgba(231, 181, 106, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 38px -2px rgba(231, 181, 106, 0.45), inset 0 0 26px -8px rgba(216, 144, 61, 0.35);
   }
 }
 
@@ -247,6 +313,23 @@ input[type="range"].telemetry-slider::-moz-range-thumb {
   animation: rocketHover 5.2s ease-in-out infinite;
 }
 
+.animate-waffle-float {
+  animation: waffleFloat 6.5s ease-in-out infinite;
+}
+
+.animate-syrup-drip {
+  transform-origin: top center;
+  animation: syrupDrip 4.4s ease-in-out infinite;
+}
+
+.animate-caramel-drop {
+  animation: caramelDrop 3.6s ease-in infinite;
+}
+
+.waffle-toast-glow {
+  animation: waffleToastGlow 4.2s ease-in-out infinite;
+}
+
 .animate-ember {
   animation: emberRise 4.5s ease-in infinite;
 }
@@ -315,6 +398,11 @@ input[type="range"].telemetry-slider::-moz-range-thumb {
 @media (prefers-reduced-motion: reduce) {
   .animate-float-slow,
   .animate-rocket-hover,
+  .animate-waffle-float,
+  .animate-syrup-drip,
+  .animate-caramel-drop,
+  .waffle-toast-glow,
+  .bg-waffle-animated,
   .animate-ember,
   .animate-pulse-ring,
   .animate-twinkle,
