@@ -633,7 +633,7 @@ export const VisualLandingPage: React.FC<VisualLandingPageProps> = ({
                     {member.fullName}
                   </h3>
                   <p className="text-[11px] text-[#E7B56A]/80 mt-0.5 line-clamp-2">
-                    {member.specialty}
+                    {member.role}
                   </p>
                 </div>
               </div>

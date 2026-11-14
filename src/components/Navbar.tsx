@@ -41,24 +41,24 @@ export const Navbar: React.FC<NavbarProps> = ({
               onToggleViewMode('visual');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-2.5 group text-left min-w-0"
+            className="flex items-center gap-2 sm:gap-2.5 group text-left shrink-0"
           >
             <div className="flex items-center -space-x-2 shrink-0">
               <img
                 src="images/brand/emblem-main.png"
                 alt="Logotipo WAFLE Rocket Tec"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-contain bg-[#0B0B0B] border border-[#E7B56A]/60 p-0.5 group-hover:scale-105 transition-transform duration-300"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-contain bg-[#0B0B0B] border border-[#E7B56A]/60 p-0.5 group-hover:scale-105 transition-transform duration-300"
               />
               <img
                 src="images/brand/rocket-tec-sinaloa.svg"
                 alt="Logotipo Rocket Tec Sinaloa"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-contain bg-[#0B0B0B] border border-[#D8903D]/55 p-0.5 group-hover:scale-105 transition-transform duration-300"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-contain bg-[#0B0B0B] border border-[#D8903D]/55 p-0.5 group-hover:scale-105 transition-transform duration-300"
               />
             </div>
 
             <div className="min-w-0">
               <div className="flex items-baseline gap-1.5">
-                <span className="font-orbitron font-bold text-sm sm:text-base tracking-wider text-[#FFF3E0]">
+                <span className="font-orbitron font-bold text-xs sm:text-base tracking-wider text-[#FFF3E0]">
                   WAFLE
                 </span>
                 <span className="text-[11px] font-mono text-[#E7B56A] hidden md:inline">
@@ -83,21 +83,22 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>Identidad</span>
             </button>
 
-            <div className="flex items-center p-1 rounded-full bg-black/75 backdrop-blur-md border border-[#E7B56A]/25">
+            <div className="flex items-center p-0.5 sm:p-1 rounded-full bg-black/75 backdrop-blur-md border border-[#E7B56A]/25">
               <button
                 type="button"
                 onClick={() => {
                   onToggleViewMode('visual');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
+                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
                   viewMode === 'visual'
                     ? 'bg-gradient-to-r from-[#E7B56A] to-[#D8903D] text-[#0B0B0B] font-bold shadow-glow-amber'
                     : 'text-[#F8D6A1]/80 hover:text-[#FFF3E0]'
                 }`}
               >
-                <Eye className="w-3.5 h-3.5" />
-                <span>Landing Page</span>
+                <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                <span className="hidden sm:inline">Landing Page</span>
+                <span className="sm:hidden">Inicio</span>
               </button>
 
               <button
@@ -106,13 +107,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onToggleViewMode('engineering');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
+                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium transition-all ${
                   viewMode === 'engineering'
                     ? 'bg-gradient-to-r from-[#E7B56A] to-[#D8903D] text-[#0B0B0B] font-bold shadow-glow-amber'
                     : 'text-[#F8D6A1]/80 hover:text-[#FFF3E0]'
                 }`}
               >
-                <Gauge className="w-3.5 h-3.5" />
+                <Gauge className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                 <span className="hidden sm:inline">Datos &amp; Simulador</span>
                 <span className="sm:hidden">Datos</span>
               </button>
